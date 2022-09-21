@@ -26,24 +26,33 @@ function showResetButton() {
 /* cube functionality*/
 function cubeClass (){
     if ( currentClass = '') {
-       cube.classList.remove( currentClass )
-  } else {
+        cube.classList.remove( currentClass )
+        
+        /*cube.classList.add( showClass )
+        currentClass = showClass*/
+    }
     cube.classList.add( showClass )
-    currentClass = showClass    
+    currentClass = showClass
+ /*   console.log (showClass)*/
+    
 }
-}
+
 
 /* Hook up a click event listener to the Roll Dice Button. */
- rollBtn.addEventListener("click", function() {
-    const randomNumber = Math.floor(Math.random() * 6) + 1
-    /*cubeClass()*/
 
+ rollBtn.addEventListener("click", function() {
+     rollDice()
+ })
+ 
+ function rollDice() {
+    const randomNumber = Math.floor(Math.random() * 6) + 1
+    
     if (player1Turn) {
         player1Score += randomNumber
         player1Scoreboard.textContent = player1Score
         player1Dice.textContent = randomNumber
         /*dice*/
-        showClass = randomNumber
+        showClass = 'show-' + randomNumber
         cubeClass()
         
         player1Dice.classList.remove("active")
@@ -54,9 +63,9 @@ function cubeClass (){
         player2Scoreboard.textContent = player2Score
         player2Dice.textContent = randomNumber
         /*dice*/
-        showClass = randomNumber
+        showClass = 'show-' + randomNumber
         cubeClass()
-        
+          
         player2Dice.classList.remove("active")
         player1Dice.classList.add("active")
         message.textContent = "Player 1 Turn"
@@ -70,7 +79,8 @@ function cubeClass (){
         showResetButton()
     }
     player1Turn = !player1Turn
-})
+ }
+
  
 resetBtn.addEventListener("click", function(){
     reset()
@@ -89,4 +99,5 @@ function reset() {
     rollBtn.style.display = "block"
     player2Dice.classList.remove("active")
     player1Dice.classList.add("active")
+    currentClass = ''
 }
