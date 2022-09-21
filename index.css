@@ -88,8 +88,8 @@ button:focus {
 }
 /*styling for 3D Cube*/
 .cube {
-  width:100px;
-  height: 100px;
+  width:200px;
+  height: 200px;
   border-radius: 10px;
   position: relative;
   transform-style: preserve-3d;
@@ -119,12 +119,12 @@ button:focus {
 }
 
 /*individual styling for each numbers face */
-.cube__face--1  { background: red; opacity: 0.75; }
-.cube__face--3  { background: red; opacity: 0.75; }
-.cube__face--2  { background: red; opacity: 0.75; }
-.cube__face--4  { background: red; opacity: 0.75; }
-.cube__face--5  { background: red; opacity: 0.75; }
-.cube__face--6  { background: red; opacity: 0.75; }
+.cube__face--1  { background: darkred; opacity: 0.75; }
+.cube__face--3  { background: darkred; opacity: 0.75; }
+.cube__face--2  { background: darkred; opacity: 0.75; }
+.cube__face--4  { background: darkred; opacity: 0.75; }
+.cube__face--5  { background: darkred; opacity: 0.75; }
+.cube__face--6  { background: darkred; opacity: 0.75; }
 
 .cube__face--1  { transform: rotateY(  0deg) translateZ(100px); }
 .cube__face--2  { transform: rotateY(180deg) translateZ(100px); }
